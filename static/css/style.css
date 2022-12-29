@@ -4,7 +4,9 @@ html {
 }
 
 body {
-    margin: 0
+    margin: 0;
+    background: #23272d !important;
+    color: #abb2bf;
 }
 
 main {
@@ -12,14 +14,27 @@ main {
 }
 
 hr {
-    box-sizing: content-box;
     height: 0;
-    overflow: visible
+    border: 0;
+    border-top: 1px solid #444c56;
 }
 
+/* Tweak pre-blocks */
 pre {
-    font-family: monospace, monospace;
-    font-size: 1em
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 10px;
+    border-radius: 5px;
+    background-color: rgb(190 215 239 / 5%);
+    font-family: hack, monaco, monospace;
+}
+
+/* And code blocks */
+code {
+    border: none;
+    font-size: 10pt;
+    margin: 3px;
+    font-family: hack, monaco, monospace;
 }
 
 a {
@@ -40,7 +55,7 @@ strong {
 code,
 kbd,
 samp {
-    font-family: monospace, monospace;
+    font-family: hack, monaco, monospace;
     font-size: 1em
 }
 
@@ -68,18 +83,28 @@ img {
     border-style: none
 }
 
+.list {
+    font-family: sans-serif;
+}
+
 button,
 input,
 optgroup,
 select,
 textarea {
+
     font-family: inherit;
     font-size: 100%;
     line-height: 1.15;
     margin: 0;
     -moz-tab-size: 4;
     -o-tab-size: 4;
+    background-color: #30343d;
     tab-size: 4;
+    border: 1px solid #555;
+    border-radius: 4px;
+    padding: 3px;
+    color: #abb2bf;
 }
 
 button,
@@ -90,6 +115,11 @@ input {
 button,
 select {
     text-transform: none
+}
+
+input:focus {
+  border: 1px solid #5ac2f5 !important;
+  outline: 0px !important;
 }
 
 [type=button],
@@ -181,14 +211,12 @@ template {
 
 main {
     margin: 1em auto;
-
-    max-width: 620px;
+    /* max-width: 900px; */
     font-size: 1.2em;
-    font-family: "Times New Roman", Times, serif;
-
+    font-family: sans-serif;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-
+    padding: 10px 80px;
 }
 
 p {
@@ -217,11 +245,6 @@ sup {
     margin: 0;
 }
 
-body {
-    margin: 1em;
-    background: rgb(253, 253, 253);
-}
-
 
 figure,
 p,
@@ -234,7 +257,9 @@ hr {
 
 h1 {
     line-height: 1.25;
-    margin-bottom: 0.4em;
+    margin-bottom: 29px;
+    border-bottom: 1px solid #444c56;
+    padding-bottom: 9px;
 }
 
 h2,
@@ -277,12 +302,15 @@ blockquote {
     quotes: "\201C""\201D""\2018""\2019";
     width: 100%;
     font-size: 0.9em;
+    border-left: 5px solid #ea70ff;
+    padding-left: 10px;
 }
 
 a {
-    color: #0000FF;
+    color: #5dc8fd;
     text-decoration: none;
     cursor: pointer;
+    font-family: sans-serif;
 }
 
 code {
@@ -292,10 +320,10 @@ code {
     margin: 0;
     padding: .2em .4em;
 }
-
+/* 
 pre {
     word-wrap: normal;
-    background-color: #f6f8fa;
+    background-color: rgb(190 215 239 / 5%);
     border-radius: 3px;
     font-size: 85%;
     line-height: 1.45;
@@ -313,22 +341,17 @@ pre code {
     overflow: visible;
     padding: 0;
     word-wrap: normal;
-}
+} */
 
 pre>code {
     background: transparent;
     border: 0;
-    font-size: 100%;
+    /* font-size: 100%; */
     margin: 0;
     padding: 0;
-    white-space: pre;
+    white-space: pre-wrap;
     word-break: normal;
 }
-
-
-
-
-
 
 
 img {
@@ -355,25 +378,18 @@ figcaption {
     text-overflow: ellipsis;
 }
 
-.list>div div:last-child {
-    padding-right: .25em;
-    color: #888;
+div.doc-date {
+    color: #abb2bf;
     font-size: 90%;
-    padding-top: 1px;
-    font-variant-numeric: tabular-nums;
-    letter-spacing: -.012em;
 }
 
 .list a {
     text-decoration: none;
 }
 
-
-
 .fr {
     float: right;
 }
-
 
 .fl {
     float: left;
@@ -419,10 +435,8 @@ summary {
 }
 
 .writing {
-    font-family: "Times New Roman", Times, serif;
     line-height: 1.25em;
     font-size: 1em;
-    background: rgb(253, 253, 253);
     width: 100%;
     height: 100%;
     box-sizing: border-box;
@@ -442,8 +456,8 @@ summary {
 @media screen and (max-device-width: 480px) {
     main {
         font-size: 1.15em;
+        padding: 5px 10px;
     }
-
     .writing {
         font-size: 1em;
     }
@@ -459,7 +473,7 @@ summary {
 
 .topbar {
     margin-top: 0em;
-    margin-bottom: 1.1em;
+    margin-bottom: 30px;
     padding-bottom: 1.1em;
     font-size: 85%;
 }
@@ -470,17 +484,29 @@ summary {
     border: none;
     padding-top: 0.2em;
     padding-bottom: 0.2em;
-    margin-bottom: 0.2em;
-    background: rgb(253, 253, 253);
+    margin-bottom: 10px;
+    background: #23272d !important;
     font-weight: bold;
+    color: #abb2bf;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #444c56;
+    border-radius: 9px;
 }
 
 #editable {
     -webkit-user-select: text;
+    font-family: hack;
+    background: #23272d !important;
+    color: #abb2bf;
+    font-size: 12pt;
+    border: 1px solid #444c56;
+    padding: 8px;
+    border-radius: 9px;
 }
 
 .iscode {
-    font-family: monospace, monospace;
+    font-family: hack, monaco, monospace;
     font-size: 85%;
     text-rendering: optimizelegibility;
 }
@@ -509,7 +535,7 @@ summary {
 
 .link,
 a {
-    color: #5858f1;
+    color: #5dc8fd;
 }
 
 .link:hover {
@@ -519,6 +545,7 @@ a {
 
 .pt5 {
     padding-top: 0.5em;
+    font-family: sans-serif;
 }
 
 .feather {
@@ -527,11 +554,12 @@ a {
 }
 
 .topbar>span>a {
-    padding-right: 0.7em;
+    padding-right: 16px;
 }
 
 .small {
     font-size: 90%;
+    font-family: sans-serif;
 }
 
 main {
@@ -555,3 +583,64 @@ main {
 .checkmark {
     color: #5858f1;
 }
+
+h1, h2, h3, h4, h5 {
+    font-family: sans-serif;
+}
+
+table {
+    border-collapse: separate;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #454c56;
+    border-spacing: 0;
+  }
+  table th, table td {
+      border-top: none;
+      border-left: none;
+  }
+  table th {
+      background-color: #2f3844;
+      padding: 6px 15px 6px 15px;
+      word-break: normal;
+  }
+  table td, .tc-control-panel td {
+      padding: 4px 15px 4px 15px;
+      word-break: normal;
+  }
+  tr:not(:first-child) td {
+    border-top: 1px solid #454c56; 
+  }
+  td:not(:last-child), th:not(:last-child) {
+   /* Vertical column dividers */
+   /* border-right: 1px solid #454c56; */
+  }
+  table>thead :first-child th {
+    border-bottom: 1px solid #454c56; 
+  }
+
+.swal2-popup {
+    background: #2a2f36f7 !important;
+    font-family: sans-serif;
+}
+
+.swal2-title {
+    color: #c1d4e5 !important;
+    font-family: sans-serif;
+}
+
+.swal2-content {
+    color: #c1d4e5 !important;
+    font-family: sans-serif;
+}
+
+.swal2-styled {
+ font-family: sans-serif;   
+}
+
+input:focus {
+    border: 1px solid #444c56 !important;
+    outline: 0px !important;
+}
+
+
