@@ -344,6 +344,7 @@ func (s *server) handleGetPublished(urlpath string) (d Document, err error) {
 		b := tx.Bucket([]byte("published"))
 		v := b.Get([]byte(uuid))
 		if v == nil {
+			time.Sleep(5 * time.Second)
 			return fmt.Errorf("not found")
 		} else {
 			return json.Unmarshal(v, &d)

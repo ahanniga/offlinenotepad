@@ -3,3 +3,5 @@ tmp/
 *db
 *~
 *.exe
+.idea
+bindata.go
